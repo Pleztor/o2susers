@@ -11,8 +11,8 @@ class UsersServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        \App::bind('Users', function() {
-            return new \O2s\Users;
+        $this->app->bind('Users', function() {
+            return new \O2s\Users\Users;
         });
     }
 

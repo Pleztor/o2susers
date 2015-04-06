@@ -30,6 +30,9 @@ class UsersServiceProvider extends ServiceProvider {
         // $this->publishes([
         //     __DIR__.'/config.php' => config_path('o2s_users.php'),
         // ]);
+        
+        // Views
+        $this->loadViewsFrom(__DIR__.'/views', 'o2suser');
     }
 
 }

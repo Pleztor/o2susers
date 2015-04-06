@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller {
 
+	public function __construct() {
+		// Make sure this is added in production code
+		// $this->middleware('auth');
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -14,7 +19,8 @@ class UsersController extends Controller {
 	 */
 	public function index()
 	{
-		dd('in the UsersController@index method');
+		$o2suser = new \O2s\Users\Users;
+		return view('o2susers::admin.index')
 	}
 
 	/**

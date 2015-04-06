@@ -20,7 +20,7 @@ class UsersController extends Controller {
 	public function index()
 	{
 		$o2suser = new \O2s\Users\Users;
-		return view('o2susers::admin.index');
+		return view('o2susers::admin.index')->with('users', $o2suser->listAll());
 	}
 
 	/**
@@ -30,7 +30,7 @@ class UsersController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		return view('o2susers::admin.form')->with('user', new \App\User);
 	}
 
 	/**
@@ -38,9 +38,12 @@ class UsersController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(\O2s\Users\UserFormRequest $request)
 	{
-		//
+		$o2suser = new \O2s\Users\Users;
+		$o2suser->save(\Input::all());
+
+        return redirect('/admin/users');
 	}
 
 	/**
@@ -51,7 +54,8 @@ class UsersController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		// showing and editing the user is considered the same action
+		return view('o2susers::admin.form')->with('user', \App\User::find($id));
 	}
 
 	/**
@@ -62,7 +66,8 @@ class UsersController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		// showing and editing the user is considered the same action
+		return view('o2susers::admin.form')->with('user', \App\User::find($id));
 	}
 
 	/**
@@ -71,9 +76,11 @@ class UsersController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(\O2s\Users\UserFormRequest $request, $id)
 	{
-		//
+		$o2suser = new \O2s\Users\Users;
+		$o2suser->save(\Input::all());
+		return redirect('/admin/users');
 	}
 
 	/**
@@ -84,7 +91,9 @@ class UsersController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		 \App\User::find($id)->delete();
+
+        return redirect('/admin/users');
 	}
 
 }

@@ -31,9 +31,6 @@ class UsersServiceProvider extends ServiceProvider {
 
         // Published items
         $this->publishes([
-            // assets
-            __DIR__.'/assets' => public_path('assets/o2s/users'),
-
             // configuration file
             __DIR__.'/config.php' => config_path('o2susers.php'),
         ]);

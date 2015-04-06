@@ -2,7 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class O2sUsersServiceProvider extends ServiceProvider {
+class UsersServiceProvider extends ServiceProvider {
 
     /**
      * Register bindings in the container.
@@ -11,7 +11,7 @@ class O2sUsersServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        \App::bind('O2sUsers', function() {
+        \App::bind('Users', function() {
             return new \O2s\Users;
         });
     }

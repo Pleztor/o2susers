@@ -9,7 +9,7 @@ class Users {
 			$this->model = $model;
 		}
 		else {
-			$this-model = new \App\User;
+			$this->model = new \App\User;
 		}
 	}
 
@@ -18,5 +18,5 @@ class Users {
 		return $this->model->all()->orderBy('name')->get();
 	}
 
-	
+
 }

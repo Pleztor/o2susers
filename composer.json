@@ -1,0 +1,11 @@
+{
+    "name": "o2s/auth",
+    "description": "Laravel Authentication",
+    "authors": [
+        {
+            "name": "Shawn Grover",
+            "email": "sgrover@open2space.com"
+        }
+    ],
+    "require": {}
+}

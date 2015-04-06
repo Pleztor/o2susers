@@ -17,16 +17,18 @@ class UserFormRequest extends Request {
      */
     public function authorize()
     {
-        // Admin user can always do it
-        if (\Auth::user()->id == 1) { return true; }
+        // // Admin user can always do it
+        // if (\Auth::user()->id == 1) { return true; }
 
-        // A user can edit their own data
-        if (\Auth::user()->id == \Input::get('id')) {
-            return true;
-        }
+        // // A user can edit their own data
+        // if (\Auth::user()->id == \Input::get('id')) {
+        //     return true;
+        // }
 
-        // otherwise Nope, not allowed.
-        return false;
+        // // otherwise Nope, not allowed.
+        // return false;
+        
+        return true;
     }
 
     /**

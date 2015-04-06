@@ -22,7 +22,7 @@ class Users {
 		if (is_array($data)) {
 			$user = new \App\User;
 			if (array_key_exists('id', $data)) {
-				$user = \User::find($data['id']);
+				$user = \App\User::find($data['id']);
 			}
 
 			if (array_key_exists('name', $data)) { $user->name = $data['name']; }

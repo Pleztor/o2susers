@@ -1,5 +1,5 @@
 {
-    "name": "o2s/auth",
+    "name": "o2s/users",
     "description": "Laravel Authentication",
     "authors": [
         {

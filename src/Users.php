@@ -21,7 +21,7 @@ class Users {
 	public function save($data) {
 		if (is_array($data)) {
 			$user = new \App\User;
-			if (array_key_exists('id', $data)) {
+			if (array_key_exists('id', $data) AND $data['id'] > 0) {
 				$user = \App\User::find($data['id']);
 			}
 

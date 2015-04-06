@@ -4,7 +4,7 @@ class Users {
 
 	protected $model;
 
-	public function __construct($model) {
+	public function __construct(\App\User $model = null) {
 		if ($model) {
 			$this->model = $model;
 		}

@@ -20,7 +20,7 @@ class UsersController extends Controller {
 	public function index()
 	{
 		$o2suser = new \O2s\Users\Users;
-		return view('o2susers::admin.index')
+		return view('o2susers::admin.index');
 	}
 
 	/**

@@ -25,8 +25,8 @@ class Users {
 				$user = User::find($data['id']);
 			}
 
-			if (array_key_exists('name', $data) { $user->name = $data['name']; }
-			if (array_key_exists('email', $data) { $user->email = $data['email']; }
+			if (array_key_exists('name', $data)) { $user->name = $data['name']; }
+			if (array_key_exists('email', $data)) { $user->email = $data['email']; }
 			if (array_key_exists('password', $data) { $user->password = \Hash::make($data['password']); }
 
 			return $user->save();

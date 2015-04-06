@@ -11,7 +11,7 @@ class O2sUsersServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        App::bind('O2sUsers', function() {
+        \App::bind('O2sUsers', function() {
             return new \O2s\Users;
         });
     }

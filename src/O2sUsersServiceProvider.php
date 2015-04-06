@@ -13,7 +13,7 @@ class O2sUsersServiceProvider extends ServiceProvider {
     {
         App::bind('O2sUsers', function() {
             return new \O2s\Users;
-        })
+        });
     }
 
     /**

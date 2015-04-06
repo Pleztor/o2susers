@@ -2,6 +2,6 @@
 
 use Illuminate\Support\Facades\Facade;
 
-class O2sUsersFacade extends Facade {
+class UsersFacade extends Facade {
 	protected static function getFacadeAccess() { return 'Users'; }
 }

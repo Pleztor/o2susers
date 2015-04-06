@@ -1,4 +1,4 @@
-# O2s/Auth
+# O2s/Users
 
 This is a Laravel 5 based package that will provide user management capabilities.
 

@@ -2,7 +2,16 @@
 
 This is a Laravel 5 based package that will provide user management capabilities.
 
-This package builds on the default Users and Authentication tables Laravel provides out of the box.
+Building on the default Users and Authentication Laravel 5 ships with, this package provides a simple user management interface.  When the database seeding step is done, the users table is cleared and the default *admin* account is set up.  Once logged in, the admin user can create, edit, or remove user accounts, including resetting passwords.  Non-admin users can see the list of users, but can only save their own records.
+
+Default credentials are:
+- name: admin
+- email: admin@example.com
+- password: password
+
+Log in as the admin user and modify these values at your earliest convenience.
+
+Access the user administration pages via http://localhost:8000/admin/users (changing the host and port to match your setup).
 
 ## Warnings
 

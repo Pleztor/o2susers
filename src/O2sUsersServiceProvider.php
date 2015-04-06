@@ -11,7 +11,9 @@ class O2sUsersServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        
+        App::bind('O2sUsers', function() {
+            return new \O2s\Users;
+        })
     }
 
     /**
@@ -28,7 +30,6 @@ class O2sUsersServiceProvider extends ServiceProvider {
         $this->publishes([
             __DIR__.'/config.php' => config_path('o2s_users.php');
         ]);
-
     }
 
 }

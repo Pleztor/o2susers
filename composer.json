@@ -1,6 +1,6 @@
 {
     "name": "o2s/users",
-    "description": "Laravel Authentication",
+    "description": "Basic Laravel 5 User Management",
     "authors": [
         {
             "name": "Shawn Grover",

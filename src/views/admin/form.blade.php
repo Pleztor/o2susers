@@ -76,11 +76,37 @@
             <div class="form-group">
                 <div class="col-sm-10 col-sm-offset-2">
                     @if($user->id)
-
-                        <button id="btnRemove" type="submit" class="btn btn-danger pull-right">Remove</button>
+                        <span class="btn btn-danger pull-right" data-toggle="modal" data-target="#confirmModel">
+                            Remove
+                        </span>
+                        {{-- <button id="btnRemove" type="submit" class="btn btn-danger pull-right">Remove</button> --}}
                     @endif
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </div>
     </form>
+
+    <div class="modal fade" id="confirmModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Confirmation</h4>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete this user?
+                </div>
+                <div class="modal-footer">
+                    <form action="{{ $formaction }}" method="POST" class="form-horizontal" role="form">
+                        <input type="hidden" name="_method" id="input_method" class="form-control" value="DELETE">
+                        <input type="hidden" name="_token" id="input_token" class="form-control" value="{{ csrf_token() }}">
+                        <input type="hidden" name="id" id="inputId" class="form-control" value="{{ $user->id }}">
+
+                        <span class="btn btn-default" data-dismiss="modal">No</span>
+                        <button type="button" class="btn btn-danger">Yes</button>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 @stop

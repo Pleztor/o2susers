@@ -76,7 +76,7 @@
             <div class="form-group">
                 <div class="col-sm-10 col-sm-offset-2">
                     @if($user->id)
-                        <a href="#" class="btn btn-danger pull-right" data-toggle="modal" data-target="#confirmModel">
+                        <a href="#" class="btn btn-danger pull-right" data-toggle="modal" data-target="#confirmModal">
                             Remove
                         </a>
                         {{-- <button id="btnRemove" type="submit" class="btn btn-danger pull-right">Remove</button> --}}

@@ -15,7 +15,7 @@ class Users {
 
 
 	public function listAll() {
-		return $this->model->all()->orderBy('name')->get();
+		return $this->model->all()->sortBy('name')->get();
 	}
 
 

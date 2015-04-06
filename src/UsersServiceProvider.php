@@ -26,13 +26,14 @@ class UsersServiceProvider extends ServiceProvider {
         // Set up routing
         include __DIR__.'/routes.php';
 
-        // Configuration
-        // $this->publishes([
-        //     __DIR__.'/config.php' => config_path('o2s_users.php'),
-        // ]);
-        
         // Views
         $this->loadViewsFrom(__DIR__.'/views', 'o2susers');
+
+        // Published items
+        $this->publishes([
+            // assets
+            __DIR__.'/assets' => public_path('o2s/users'),
+        ]);
     }
 
 }

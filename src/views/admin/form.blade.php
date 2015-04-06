@@ -103,7 +103,7 @@
                         <input type="hidden" name="id" id="inputId" class="form-control" value="{{ $user->id }}">
 
                         <span class="btn btn-default" data-dismiss="modal">No</span>
-                        <button type="button" class="btn btn-danger">Yes</button>
+                        <button type="submit" class="btn btn-danger">Yes</button>
                     </form>
                 </div>
             </div><!-- /.modal-content -->

@@ -1,4 +1,4 @@
-@extends('app')
+@extends(\Config::get('o2susers.layout'))
 
 @section('content')
     <?php

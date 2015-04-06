@@ -28,7 +28,7 @@ class O2sUsersServiceProvider extends ServiceProvider {
 
         // Configuration
         $this->publishes([
-            __DIR__.'/config.php' => config_path('o2s_users.php');
+            __DIR__.'/config.php' => config_path('o2s_users.php'),
         ]);
     }
 

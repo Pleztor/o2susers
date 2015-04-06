@@ -32,7 +32,7 @@ class UsersServiceProvider extends ServiceProvider {
         // ]);
         
         // Views
-        $this->loadViewsFrom(__DIR__.'/views', 'o2suser');
+        $this->loadViewsFrom(__DIR__.'/views', 'o2susers');
     }
 
 }

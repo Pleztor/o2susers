@@ -1,4 +1,4 @@
-<?php namespace App\Providers;
+<?php namespace O2s\Users;
 
 use Illuminate\Support\ServiceProvider;
 

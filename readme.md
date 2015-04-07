@@ -33,6 +33,11 @@ composer require o2s/users dev-develop
 
 *Note: change dev-develop to a suitable stable version if/when one exists*
 
+Add the service provider to the end of the providers list in `config/app.php`
+```
+'O2s\Users\UsersServiceProvider',
+```
+
 Publish the package assets:
 ```
 php artisan vendor:publish --provider="O2s\Users\UsersServiceProvider"

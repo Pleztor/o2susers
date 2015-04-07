@@ -18,7 +18,7 @@ class UserFormRequest extends Request {
     public function authorize()
     {
         // make sure we have a user
-        if ( ! Auth::user() ) {
+        if ( ! \Auth::user() ) {
             return false;
         }
 

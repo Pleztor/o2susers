@@ -67,9 +67,10 @@ class DatabaseSeeder extends Seeder {
 }
 ```
 
-Migrate and seed your database.  Only run the db:seed once, or when the database is reset.  Otherwise your user table will be cleared and restored to have the admin account only.
+Migrate and seed your database.  Only run the db:seed once, or when the database is reset.  Otherwise your user table will be cleared and restored to have the admin account only.  If you run into troubles about the UsersTableSeeder class not being found then regenerate your autoload to capture the new files.  The first line below covers this:
 
 ```
+composer dump-autoload -o
 php artisan migrate 
 php artisan db:seed
 ```

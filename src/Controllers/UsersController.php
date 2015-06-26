@@ -1,11 +1,12 @@
 <?php namespace O2s\Users\Controllers;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
+use Illuminate\Foundation\Bus\DispatchesCommands;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 
-class UsersController extends Controller {
+class UsersController extends BaseController {
+	use DispatchesCommands, ValidatesRequests;
 
 	public function __construct() {
 		// Make sure this is added in production code

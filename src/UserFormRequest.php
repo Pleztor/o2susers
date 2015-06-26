@@ -1,9 +1,7 @@
 <?php namespace O2s\Users;
 
-use App\Http\Requests\Request;
-
-class UserFormRequest extends Request {
-
+class UserFormRequest extends \Illuminate\Foundation\Http\FormRequest {
+   
     protected $rules = [
         'name'     => 'required',
         'email'    => 'required|email',

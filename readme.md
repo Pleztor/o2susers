@@ -2,7 +2,7 @@
 
 This is a Laravel 5 based package that will provide user management capabilities.
 
-Building on the default Users and Authentication Laravel 5 ships with, this package provides a simple user management interface.  When the database seeding step is done, the users table is cleared and the default *admin* account is set up.  Once logged in, the admin user can create, edit, or remove user accounts, including resetting passwords.  Non-admin users can see the list of users, but can only save their own records.
+Building on the default Users and Authentication Laravel 5 ships with, this package provides a simple user management interface.  When the database seeding step is done, the users table is cleared and the default *admin* account is set up.  Once logged in, the admin user can create, edit, or remove user accounts, including resetting passwords.  You can re-use the admin views if needed to create a page for users to edit their own data.
 
 Default credentials are:
 - name: admin
@@ -13,13 +13,17 @@ Log in as the admin user and modify these values at your earliest convenience.
 
 Access the user administration pages via http://localhost:8000/admin/users (changing the host and port to match your setup).
 
+## Recent Changes
+- *Jul 3, 2015* - the security system has been enhanced to address a security bug.  When used in an application, any user could view the user management pages.  This was known, but it became inconvenient.  The security was changed to allow only the admin user to access the user management pages.  This means that a user cannot edit their own details at the moment, but we feel that is a small issue compared to the larger security hole.
+
+
 ## Warnings
 
 While this package is pretty light weight, it may affect some things you wouldn't expect.  Specifically:
 
 - The database seed routine will truncate the users table.  Anytime the seed is run, all existing users will be removed and the users table will be restored to the expected default setting.  This means your seeding should not happen very often.
 
-- The first user record (ID # 1) is considered the administrative account.  The rudimentary security implemented in the O2s\Users\UserFormRequest object will allow this account to edit all records.
+- The first user record (ID # 1) is considered the administrative account.  The rudimentary security implemented in the O2s\Users\UserFormRequest object will allow this account to access user management.
 
 
 ## Installation / Configuration
@@ -80,6 +84,12 @@ Edit the config file if needed.  This is very simple and defines the layout to b
 	'layout' => 'app',
 ```
 Change the `app` part to match your desired layout.  (i.e. "layouts.master" is a common layout setting)
+
+Finally, register the Admin middleware that prevents access to the user management interfaces by anyone other than the administrator.  Edit the `app/http/Kernel.php` file and add the following line to the end of the $routeMiddleware array
+
+```
+	'admin' => \O2s\Users\Middleware\Admin::class,
+```
 
 Done.
 

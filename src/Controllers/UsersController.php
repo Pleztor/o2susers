@@ -10,7 +10,7 @@ class UsersController extends BaseController {
 
 	public function __construct() {
 		// Make sure this is added in production code
-		$this->middleware('auth');
+		$this->middleware('admin');
 	}
 
 	/**

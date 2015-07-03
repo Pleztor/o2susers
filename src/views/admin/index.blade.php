@@ -11,7 +11,7 @@
 	@foreach ($users as $row)
 		<div class="row">
 			<div class="col-sm-12">
-				<a href="/admin/users/{{$row->id}}/edit">{{ $row->name }} [ {{ $row->email }} ]
+				<a href="/admin/users/{{$row->id}}/edit">{{ $row->name }} [ {{ $row->email }} ]</a>
 			</div>
 		</div>
 	@endforeach

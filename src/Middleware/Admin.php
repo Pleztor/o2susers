@@ -15,8 +15,9 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-
-        dd($request);
+        // Current user must be an administrative user
+        if ( ! \Auth::user() ) { throw new \Symfony\Component\HttpKernel\Exception\NotFoundHttpException; }
+        if ( \Auth::user()->id != 1 ) { throw new \Symfony\Component\HttpKernel\Exception\NotFoundHttpException; }
 
         return $next($request);
     }

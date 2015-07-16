@@ -35,7 +35,7 @@ class UsersServiceProvider extends ServiceProvider {
             __DIR__.'/config.php' => config_path('o2susers.php'),
 
             // Database Seed File(s)
-            __DIR__.'/db/seeds/' => base_path('database/seeds'),
+            __DIR__.'/db/' => base_path('database/'),
         ]);
     }
 }

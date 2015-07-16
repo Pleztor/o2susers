@@ -13,8 +13,8 @@ class AlterTableUsers extends Migration {
 	public function up()
 	{
 		Schema::table('users', function($table) {
-			$table->string('hashid', 200);
-		})
+			$table->string('hashid', 200)->after('password');
+		});
 	}
 
 	/**
@@ -26,7 +26,7 @@ class AlterTableUsers extends Migration {
 	{
 		Schema::table('users', function($table) {
 			$table->dropColumn('hashid');
-		})	
+		});
 	}
 
 }

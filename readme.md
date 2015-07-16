@@ -14,6 +14,8 @@ Log in as the admin user and modify these values at your earliest convenience.
 Access the user administration pages via http://localhost:8000/admin/users (changing the host and port to match your setup).
 
 ## Recent Changes
+- *16 Jul, 2015* - Added a hashid column to the users table.  This allows a non-database ID to be used to reference a user.  (i.e. application key for user account).  The App\User model needs to be changed to ensure this is populated as well.
+
 - *Jul 3, 2015* - the security system has been enhanced to address a security bug.  When used in an application, any user could view the user management pages.  This was known, but it became inconvenient.  The security was changed to allow only the admin user to access the user management pages.  This means that a user cannot edit their own details at the moment, but we feel that is a small issue compared to the larger security hole.
 
 

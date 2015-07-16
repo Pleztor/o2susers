@@ -36,6 +36,9 @@ class UsersServiceProvider extends ServiceProvider {
 
             // Database Seed File(s)
             __DIR__.'/db/' => base_path('database/'),
+
+            // Update the initial App\User model
+            __DIR__.'/App/User.php' => app_path('User.php');
         ]);
     }
 }

@@ -39,11 +39,6 @@ class Users {
 			if (array_key_exists('email', $data)) { $user->email = $data['email']; }
 			if (array_key_exists('password', $data)) { $user->password = \Hash::make($data['password']); }
 
-			if ( ! $user->id ) {
-				// assign a hashid
-				$user->hashid = uniqid();
-			}
-
 			return $user->save();
 		}
 

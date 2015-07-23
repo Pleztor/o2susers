@@ -51,8 +51,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * @param  array  $options
 	 */
 	public function save(array $options = array()) {
-		if ( ! $this->id )
-			if (\Schema::hasColumn('users', 'hashid'))
+		if ( ! $this->id ) {
+			if (\Schema::hasColumn('users', 'hashid')) {
 				// assign a hashid
 				$this->hashid = uniqid();
 			}

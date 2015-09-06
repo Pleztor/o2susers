@@ -48,6 +48,15 @@
                 </div>
             </div>
 
+             <div class="form-group">
+                <label for="isAdmin" class="col-sm-2 control-label">Administration Rights</label>
+                <div class="checkbox col-sm-6">
+                    <input type="checkbox" name="isAdmin" id="isAdmin" value="{{ $user->isAdmin }}" 
+                    @if (($user->id) && ($user->id == 1 || $user->isAdmin == 1)) checked @endif   
+                    placeholder="Admin Rights">
+                </div>
+                </div>
+
             <div class="form-group">
                 <legend>Password</legend>
                 @if ($user->id > 0)

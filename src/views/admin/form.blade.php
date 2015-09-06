@@ -37,14 +37,14 @@
             <div class="form-group">
                 <label for="inputName" class="col-sm-2 control-label">Name</label>
                 <div class="col-sm-10">
-                    <input type="text" name="name" id="inputName" class="form-control" value="{{ $user->name }}" placeholder="Name of the user">
+                    <input type="text" name="name" id="inputName" class="form-control" value="{{ $user->name }}" placeholder="Name of the user" required>
 
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputEmail" class="col-sm-2 control-label">Email</label>
                 <div class="col-sm-10">
-                    <input type="text" name="email" id="inputEmail" class="form-control" value="{{ $user->email }}" placeholder="Users email">
+                    <input type="email" name="email" id="inputEmail" class="form-control" value="{{ $user->email }}" placeholder="Users email" required>
                 </div>
             </div>
 

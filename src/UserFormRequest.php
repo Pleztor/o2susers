@@ -19,9 +19,12 @@ class UserFormRequest extends \Illuminate\Foundation\Http\FormRequest {
         if ( ! \Auth::user() ) {
             return false;
         }
+        
+        //The password and the confirm password must be the same
+        if ((\Input::get('password')) && (\Input::get('password')!=\Input::get('confirm')))  return false;
 
         // Admin user can always do it
-        if (\Auth::user()->id == 1) { return true; }
+        if (\Auth::user()->id == 1 || \Auth::user()->isAdmin == 1) { return true; }
 
         // A user can edit their own data
         if (\Auth::user()->id == \Input::get('id')) {

@@ -17,7 +17,7 @@ class Admin
     {
         // Current user must be an administrative user
         if ( ! \Auth::user() ) { throw new \Symfony\Component\HttpKernel\Exception\NotFoundHttpException; }
-        if ( \Auth::user()->id != 1 ) { throw new \Symfony\Component\HttpKernel\Exception\NotFoundHttpException; }
+        if ( \Auth::user()->id != 1 && \Auth::user()->isAdmin != 1) { throw new \Symfony\Component\HttpKernel\Exception\NotFoundHttpException; }
 
         return $next($request);
     }

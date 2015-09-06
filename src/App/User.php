@@ -37,8 +37,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * NOTE: This should be evolved to allow multiple admin accounts
 	 * @return boolean
 	 */
-	public function isAdmin() {
-		if ($this->id == 1) {
+	public function is_Admin() {
+		if ($this->id == 1 || $this->isAdmin == 1) {
 			return true;
 		}
 		return false;

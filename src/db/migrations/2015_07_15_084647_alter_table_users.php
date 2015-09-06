@@ -14,6 +14,7 @@ class AlterTableUsers extends Migration {
 	{
 		Schema::table('users', function($table) {
 			$table->string('hashid', 200)->after('password');
+			$table->tinyInteger('isAdmin')->after('hashid')->default(0);
 		});
 	}
 
@@ -26,6 +27,7 @@ class AlterTableUsers extends Migration {
 	{
 		Schema::table('users', function($table) {
 			$table->dropColumn('hashid');
+			$table->dropColumn('isAdmin');
 		});
 	}
 

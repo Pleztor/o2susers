@@ -18,10 +18,17 @@ class UserTableSeeder extends Seeder {
 		DB::table('users')->truncate();
 
 		\App\User::create(array(
-            'name'     => 'admin',
-            'email'    => 'admin@example.com',
-            'password' => \Hash::make('password')
-        ));
+        	    'name'     => 'admin',
+        	    'email'    => 'admin@example.com',
+        	    'password' => \Hash::make('password'),
+        	    'isAdmin'  => 1
+        	));
+        	
+        	\App\User::create(array(
+        	    'name'     => 'user',
+        	    'email'    => 'user@example.com',
+        	    'password' => \Hash::make('1234')
+        	));
 	}
 
 }
